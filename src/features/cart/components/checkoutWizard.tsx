@@ -97,7 +97,7 @@ export default function CheckoutWizard() {
     });
   };
 
-  if (cart.length === 0 ) return null;
+  if (cart.length === 0 && !orderComplete) return null;
 
   return (
     <div className="w-full max-w-xl rounded-2xl border border-slate-200 bg-white p-6 shadow-xl">
