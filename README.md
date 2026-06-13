@@ -59,7 +59,24 @@ This project represents an **E-commerce Platform** to demonstrate complex state 
 ### Google Fonts
 * It is used to implement optimized web fonts.
 
-## Installation
+# File Structure
+```
+├── src/                       
+│   ├── app/
+        └── (main pages)/      # Grouped pages                
+│   ├── components/            # Global visual UI
+│   │   └── shared/            # shared components
+│   ├── features/              
+│   │   ├── admin/             # Analytics graphs and inventory dashboards
+│   │   ├── auth/              # Credential schemas and authentication flows
+│   │   ├── cart/              # Step wizards, and validation
+│   │   └── products/          # Catalog grids, search filters, and cards
+│   ├── store/                 # Zustand persistent local store setups
+│   └── utils/                 # Supabase server/client initialization logic
+
+```
+
+# Installation
 
 First, run the development server:
 
