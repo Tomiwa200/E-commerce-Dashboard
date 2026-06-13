@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-// 🚀 THE SHIELD: Tells Next.js to NEVER compile this component on Vercel's servers
 const CartViewWithNoSSR = dynamic(
   () => import("@/features/cart/components/CartView"),
   {
