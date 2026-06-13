@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Overview
 
-## Getting Started
+## Fullstack E-commerce Dashboard & Storefront
+This project represents an **E-commerce Platform** to demonstrate complex state mangement, data management and application architecture
+
+**The storefront visually represents a platform where users can:**
+
+* Register an account and sign in
+* Browse product lists
+* Search for products by name
+* Filter products based on categories
+* Add products to cart
+* Place an order via Paystack gateway on the checkout page
+
+**The ADMIN  Dashboard visually represents a platform where an Admin can:**
+
+  * View gross total sales
+  * View daily sales on barchart
+  * View all available products in inventory
+  * Add custom product to database
+
+# Folder Structure
+```
+├── src/                       
+│   ├── app/
+        └── (main pages)/      # Grouped pages                
+│   ├── components/            # Global visual UI
+│   │   └── shared/            # shared components
+│   ├── features/              
+│   │   ├── admin/             # Analytics graphs and inventory dashboards
+│   │   ├── auth/              # Credential schemas and authentication flows
+│   │   ├── cart/              # Step wizards, and validation
+│   │   └── products/          # Catalog grids, search filters, and cards
+│   ├── store/                 # Zustand local store setups
+│   └── utils/                 # Supabase server/client initialization logic
+
+```
+
+# Installation
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install- to install node modules
+pnpm dev - to open project on browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Tech Stack Used
+### NEXTjs Framework
+* For handling routing, server-side rendering (SSR), and static site generation.
+* It makes my app fast by pre-rendering pages and optimizing how data is fetched.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Shadcn UI
+* It provides raw, uncompiled, fully editable UI source files that can be used into my project. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Typescript Language
+* Enforces strict, type-safe development across the codebase.
+* It catches coding and type errors during compilation before your code is ever built or deployed.
 
-## Learn More
+### Supabase Authentication
+* It manages user logins, sign-ups, and session security.
 
-To learn more about Next.js, take a look at the following resources:
+### Supabase Database
+*  A PostgreSQL database to store users, products and orders data
+*  Used to create images storage bucket
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Paystack API
+* Handles secure payment processing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Zustand
+* Manages local client state.
+* Ensures persistence of items added to cart
 
-## Deploy on Vercel
+### Tanstack Query
+  * Manages remote server data
+  *  It fetches, caches, auto-refetches, and updates remote data from the database.
+    
+### React Hook Form
+* Handles complex form validation and step workflows
+* It captures checkout address details, credentials, and user data while checking fields against Zod schema conditions to minimize re-renders.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### TailwindCSS
+ * It is used to style components directly in the TSX files using pre-defined classes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Google Fonts
+* It is used to implement optimized web fonts.
+
+
+```
+
