@@ -55,7 +55,14 @@ export const useCartStore = create<CartState>()(
     }),
     {
       name: "ecommerce-cart-storage", 
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => 
+      typeof window !== "undefined" ? window.localStorage : dummyStorage),
     }
   )
 );
+
+const dummyStorage = {
+  getItem: () => null,
+  setItem: () => undefined,
+  removeItem: () => undefined,
+};

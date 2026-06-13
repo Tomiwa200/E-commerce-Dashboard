@@ -7,7 +7,7 @@ import { checkoutSchema, CheckoutFormValues } from "../schemas/checkout";
 import { useCartStore } from "@/store/useCartStore";
 import { createClient } from "@/utils/supabase/client";
 import { usePaystackPayment } from "react-paystack";
-import { ShieldCheck, CreditCard } from "lucide-react";
+import { ShieldCheck, CreditCard, CheckCheck, CheckCheckIcon, CheckCircle } from "lucide-react";
 
 export default function CheckoutWizard() {
   const supabase = createClient();
@@ -97,7 +97,7 @@ export default function CheckoutWizard() {
     });
   };
 
-  if (cart.length === 0 && !orderComplete) return null;
+  if (cart.length === 0 ) return null;
 
   return (
     <div className="w-full max-w-xl rounded-2xl border border-slate-200 bg-white p-6 shadow-xl">
@@ -118,15 +118,15 @@ export default function CheckoutWizard() {
         </span>
       </div>
       {orderComplete ? (
-        <div className="py-8 text-center">
+        <div className="py-6 text-center">
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 font-bold text-xl">
-            ✓
+           <CheckCircle size={60} />
           </div>
-          <h3 className="text-lg font-bold text-slate-900">
+          <h3 className="text-2xl font-bold text-slate-900">
             Payment Cleared Successfully!
           </h3>
-          <p className="text-xs text-slate-500 mt-1">
-            Your order is logged and marked as paid in your Supabase ledger.
+          <p className="text-md text-slate-500 mt-1">
+            Your order is logged and marked as paid 
           </p>
         </div>
       ) : (
