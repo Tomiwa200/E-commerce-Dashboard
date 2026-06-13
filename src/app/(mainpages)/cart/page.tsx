@@ -18,19 +18,15 @@ const CartViewWithNoSSR = dynamic(
 
 export default function CartPage() {
   return (
-    <div className="min-h-screen bg-slate-50/50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl">
-        
+    <div className="min-h-screen grow bg-slate-50/50 py-12 px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-3xl"> 
         <div className="mb-6">
           <Link href="/products" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors">
             <ArrowLeft className="h-3.5 w-3.5" /> Back to Storefront
           </Link>
           <h1 className="text-3xl font-black tracking-tight text-slate-900 mt-3">Shopping Basket Matrix</h1>
         </div>
-
-        {/* Dynamic Safe Injection Node */}
         <CartViewWithNoSSR />
-
       </div>
     </div>
   );
