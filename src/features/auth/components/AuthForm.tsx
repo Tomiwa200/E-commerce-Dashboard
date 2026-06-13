@@ -14,7 +14,7 @@ export default function AuthForm() {
   const router = useRouter();
 
   const searchParams = useSearchParams();
-const redirectTarget = searchParams.get("next") || "/products";
+   const redirectTarget = searchParams.get("next") || "/products";
 
   const currentSchema = isLogin ? loginSchema : signupSchema;
 
