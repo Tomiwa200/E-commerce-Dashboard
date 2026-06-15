@@ -1,4 +1,4 @@
-import CheckoutForm from "@/features/cart/components/CheckoutPage";
+import CheckoutForm from "@/features/cart/components/CheckoutForm";
 
 
 

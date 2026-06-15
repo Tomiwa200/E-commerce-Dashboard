@@ -38,7 +38,7 @@ export default function SideNav() {
   };
 
   return (
-    <div className="h-auto w-full relative md:fixed md:z-1 md:top-0 md:left-0 md:h-full md:w-55 flex flex-col px-3 py-4 md:py-30 md:px-20 bg-slate-900 text-white">
+    <div className="h-auto w-full relative md:fixed md:h-full md:w-55 z-1 top-0 left-0 flex flex-col px-3 py-4 md:py-30 md:px-20 bg-slate-900 text-white">
       <div
         className=" hidden md:flex justify-between space-x-2 
         md:flex-col md:space-x-0 md:space-y-8"

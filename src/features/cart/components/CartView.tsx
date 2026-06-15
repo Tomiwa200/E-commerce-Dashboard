@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Trash2, Plus, Minus, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 
+
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart, clearCart } = useCartStore();
 
@@ -19,20 +20,6 @@ export default function CartPage() {
   const grandTotal = subtotal + logisticsFee;
 
   return (
-    <div className="grow bg-slate-50/50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-6">
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" /> Back to Marketplace
-          </Link>
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 mt-3">
-            Shopping Cart
-          </h1>
-        </div>
-
         <HydrationGuard>
           {cart.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-16 text-center shadow-sm">
@@ -159,7 +146,5 @@ export default function CartPage() {
             </div>
           )}
         </HydrationGuard>
-      </div>
-    </div>
   );
 }
