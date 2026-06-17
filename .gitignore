@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+src/utils
+src/test
+src/features/cart/utils/
+vitest.config.ts
 
 # next.js
 /.next/
