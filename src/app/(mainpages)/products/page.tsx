@@ -61,7 +61,7 @@ export default function ProductsCatalogPage() {
           </div>
         ) : (
           <ErrorBoundary fallbackMessage="The grid engine met an exception mapping elements from data parameters.">
-             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+             <div className="grid grid-cols-1 px-4 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

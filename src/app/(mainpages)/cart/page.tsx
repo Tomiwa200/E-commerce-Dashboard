@@ -27,7 +27,7 @@ export default function CartPage() {
           >
             <ArrowLeft className="h-3.5 w-3.5" /> Back to Marketplace
           </Link>
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 mt-3">
+          <h1 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 mt-3">
             Shopping Cart
           </h1>
         </div>

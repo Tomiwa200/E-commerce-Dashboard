@@ -37,7 +37,7 @@ export default function AnalyticsDashboard() {
     <div className="grid gap-6 md:grid-cols-3 mb-8">
       <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:col-span-1 flex flex-col justify-center">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Gross Platform Sales</span>
-        <h3 className="text-3xl font-extrabold text-slate-900 mt-2">${grossRevenue.toFixed(2)}</h3>
+        <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mt-2">${grossRevenue.toFixed(2)}</h3>
         <p className="text-xs text-emerald-600 font-medium mt-1">Total aggregated lifetime order volume</p>
       </div>
 

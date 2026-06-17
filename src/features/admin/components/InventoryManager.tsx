@@ -117,10 +117,10 @@ export default function InventoryManager() {
   return (
     <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
       <div className="flex items-center justify-between border-b border-slate-100 p-5 bg-slate-50/50">
-        <h3 className="text-xl font-bold text-slate-800">Stock Directory</h3>
+        <h3 className="text-md md:text-xl font-bold text-slate-800">Stock Directory</h3>
         <button
           onClick={() => setIsOpen(true)}
-          className="rounded-lg bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800"
+          className="rounded-lg bg-slate-900  px-2 md:px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800"
         >
           + Add Custom Product
         </button>
