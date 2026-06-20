@@ -1,0 +1,42 @@
+name: CI/CD Quality & Deployment Gateway
+
+on:
+  push:
+    branches: [ main ] # Runs automatically when code hits your production branch
+  pull_request:
+    branches: [ main ] # Runs automatically to check pull requests before they are merged
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup PNPM Package Workspace
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
+
+      - name: Retrieve Node Modules Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install Project Dependencies
+        run: pnpm install
+
+      - name: Execute Quality Gate 1 - Vitest Testing Suite
+        run: pnpm test:ci # Running 'vitest run' executes tests once instead of watching them
+
+      - name: Execute Quality Gate 2 - TypeScript Type Check
+        run: pnpm tsc --noEmit
