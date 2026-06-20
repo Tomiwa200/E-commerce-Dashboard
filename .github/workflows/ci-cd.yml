@@ -18,9 +18,8 @@ jobs:
         with:
           node-version: 20
 
-      # 🚀 THE CRITICAL FIX: Disable workspace lookups explicitly
       - name: Setup PNPM Package Workspace
-        uses: pnpm/action-setup@v4  # Upgraded to v4 for better Next.js standalone optimization
+        uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: false
@@ -33,9 +32,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      # 🚀 THE SECURE INSTALL FLAG: Installs standalone dependencies without workspace mode
+      # 🚀 Standard installation sequence
       - name: Install Project Dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       - name: Execute Quality Gate 1 - Vitest Testing Suite
         run: pnpm test:ci
