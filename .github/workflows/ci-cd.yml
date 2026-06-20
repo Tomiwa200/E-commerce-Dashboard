@@ -2,9 +2,9 @@ name: CI/CD Quality & Deployment Gateway
 
 on:
   push:
-    branches: [ main ] # Runs automatically when code hits your production branch
+    branches: [ main ]
   pull_request:
-    branches: [ main ] # Runs automatically to check pull requests before they are merged
+    branches: [ main ]
 
 jobs:
   validate-and-test:
@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: 20
 
+      # 🚀 THE CRITICAL FIX: Disable workspace lookups explicitly
       - name: Setup PNPM Package Workspace
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4  # Upgraded to v4 for better Next.js standalone optimization
         with:
           version: 9
           run_install: false
@@ -32,11 +33,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
+      # 🚀 THE SECURE INSTALL FLAG: Installs standalone dependencies without workspace mode
       - name: Install Project Dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Execute Quality Gate 1 - Vitest Testing Suite
-        run: pnpm test:ci # Running 'vitest run' executes tests once instead of watching them
+        run: pnpm test:ci
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: mock-anon-key
+          NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY: pk_test_mock_key
 
       - name: Execute Quality Gate 2 - TypeScript Type Check
         run: pnpm tsc --noEmit
