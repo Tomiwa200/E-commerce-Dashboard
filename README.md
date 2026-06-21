@@ -48,8 +48,12 @@ pnpm dev - to open project on browser
 # Tech Stack Used
 ### NEXTjs Framework
 * For handling routing, server-side rendering (SSR), and static site generation.
-* It makes my app fast by pre-rendering pages and optimizing how data is fetched.
+* It makes my app fast by pre-rendering pages and optimizing how data is fetched.#
 
+### Github Actions
+* Serves as the automated engine that orchestrates the entire Continuous Integration and Continuous Deployment (CI/CD) lifecycle.
+* It eliminates manual error-prone tasks by executing code validation, production optimization, and deployment scripts every time code is modified.
+  
 ### Shadcn UI
 * It provides raw, uncompiled, fully editable UI source files that can be used into my project. 
 
